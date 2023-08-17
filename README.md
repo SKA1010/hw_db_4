@@ -55,17 +55,16 @@ WHERE length > (SELECT AVG(length) FROM sakila.film);
 Создал запрос:
 
 ```sql
-SELECT MONTH (payment_date), SUM(amount), COUNT(rental_id) 
-FROM sakila.payment 
-GROUP BY MONTH (payment_date)
-HAVING SUM(amount) >= ALL (
-SELECT SUM(amount)
-FROM sakila.payment 
-GROUP BY MONTH (payment_date));
-SELECT MONTH (payment_date), SUM(amount), COUNT(rental_id) 
-FROM sakila.payment 
-GROUP BY MONTH (payment_date)
-ORDER BY SUM(amount) DESC 
+SELECT
+	SUM(amount) AS monthly_payment,
+	DATE_FORMAT(payment_date,'%Y-%m') AS 'month',
+	COUNT(*) AS rental_qnty
+FROM
+	payment 
+GROUP BY
+	DATE_FORMAT(payment_date,'%Y-%m')
+ORDER BY
+	monthly_payment DESC
 LIMIT 1;
 ```
 Пример выполнения:

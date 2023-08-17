@@ -69,6 +69,7 @@ LIMIT 1;
 ```
 Пример выполнения:
 
-![image](https://github.com/SKA1010/hw_db_4/assets/125235217/87794e67-70b5-4aa9-b8cb-d5936c318943)
+![image](https://github.com/SKA1010/hw_db_4/assets/125235217/e3bd91fb-b115-47e3-9b28-a768db90e62c)
+
 
 

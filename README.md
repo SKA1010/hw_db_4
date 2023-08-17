@@ -55,21 +55,17 @@ WHERE length > (SELECT AVG(length) FROM sakila.film);
 Создал запрос:
 
 ```sql
-SELECT
-	SUM(amount) AS monthly_payment,
-	DATE_FORMAT(payment_date,'%Y-%m') AS 'month',
-	COUNT(*) AS rental_qnty
-FROM
-	payment 
-GROUP BY
-	DATE_FORMAT(payment_date,'%Y-%m')
-ORDER BY
-	monthly_payment DESC
+SELECT	SUM(amount) AS monthly_payment,	DATE_FORMAT(payment_date,'%Y-%m') AS 'month', COUNT(*) AS rental_qnty
+FROM payment 
+GROUP BY DATE_FORMAT(payment_date,'%Y-%m')
+ORDER BY monthly_payment DESC
 LIMIT 1;
 ```
 Пример выполнения:
 
-![image](https://github.com/SKA1010/hw_db_4/assets/125235217/e3bd91fb-b115-47e3-9b28-a768db90e62c)
+![image](https://github.com/SKA1010/hw_db_4/assets/125235217/3e0f4ecb-dc26-4dc6-ad42-bf4c3ca79ccb)
+
+
 
 
 
